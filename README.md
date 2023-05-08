@@ -5,7 +5,7 @@ Data Wrangling:
 
 To prepare the data for modeling, a function named "wrangle" was created. This function takes a file path as an argument and returns a DataFrame. The first step in data wrangling was to subset the data in the CSV file to include only relevant columns such as location, size, and price. Then outliers were removed from surface_covered_in_m2 column using quantile method in pandas. Next, separate "lat" and "lon" columns were created because their data type is object so each should be in their own column where the data type is float.Next, Mexico City is divided into 15 neighborhoods. A new feature called "neighborhood" was created from the "place_with_parent_names" column by extracting the name of the borough from it.finally, To further improve our model's performance, some columns containing low or high cardinality were dropped along with 50% null values and leakage features like 'price_usd_per_m2' which would not be available at prediction time.
 
-Model Building :
+Model Building:
 
 After cleaning up our dataset we used glob to create a list of files then split Data into feature matrix and target vector. We then built our model using Ridge() model which is commonly used for regression problems like this one since it helps prevent overfitting by adding a penalty term to the loss function.
 
